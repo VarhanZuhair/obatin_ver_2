@@ -1,5 +1,2 @@
-# obatin_ver_2
-
-Obatin
-Proyek Tingkat 1 
-
+Kelompok 10 Yuk Bisa Yuk 
+Mata Kuliah Proyek Tingkat 1

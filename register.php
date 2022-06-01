@@ -1,3 +1,18 @@
+<?php
+require 'functions.php';
+if(isset($_POST["register"])){
+  if(register($_POST) > 0){
+    echo "<script>
+    alert('User baru berhasil ditambahkan!');
+    </script>";
+  } else {
+    echo "<script>
+    alert('User gagal ditambahkan!');
+    </script>";
+  }
+}
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -36,23 +51,23 @@
     <section>
         <div class="row px-5 justify-content-center">
           <div class="col-md-4 py-5 px-5 shadow-lg kotak-login">
-            <form name="form">
+            <form name="form" action="" method="post">
               <div class="row">
                 <h2 class="text-center">REGISTER</h2>
               </div>
               <div class="row">
                 <label for="exampleInputFullname" class="form- py-3">Full Name</label>
                 <div class="col mb-3">
-                  <input type="text" class="form-control kolom-input" placeholder="First name" aria-label="First name">
+                  <input type="text" class="form-control kolom-input" placeholder="First name" aria-label="First name" name="first_name">
                 </div>
                 <div class="col mb-3">
-                  <input type="text" class="form-control kolom-input" placeholder="Last name" aria-label="Last name">
+                  <input type="text" class="form-control kolom-input" placeholder="Last name" aria-label="Last name" name="last_name">
                 </div>
               </div>
               <div class="mb-3">
                 <!-- Username -->
                 <label for="exampleInputPhoneNumber" class="form- py-3">Phone Number</label>
-                <input type="text" name="phonenumber" class="form-control kolom-input" placeholder="Phone Number">
+                <input type="text" name="phone_number" class="form-control kolom-input" placeholder="Phone Number">
               </div>
               <div class="mb-3">
                 <!-- Username -->
@@ -72,13 +87,13 @@
               <div class="mb-3">
                 <!-- Password -->
                 <label for="exampleInputPassword2" class="form-label py-3">Confirm Password</label>
-                <input type="password" name="password" class="form-control kolom-input" id="exampleInputPassword1" placeholder="Confirm Password">
+                <input type="password" name="password2" class="form-control kolom-input" id="exampleInputPassword2" placeholder="Confirm Password">
               </div>
               <div class="row py-3">
                 <div class="col"></div>
                 <div class="col-8">
                   <div class="row mt-5">
-                    <button type="submit" class="btn tombol-submit"><b>REGISTER</b></button>
+                    <button type="submit" name="register" class="btn tombol-submit"><b>REGISTER</b></button>
                   </div>
                 </div>
                 <div class="col"></div>

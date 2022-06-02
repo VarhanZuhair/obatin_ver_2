@@ -17,16 +17,6 @@ if(isset($_POST["login"])){
   }
 
   $error = true;
-  // if(register($_POST) > 0){
-  //   echo "<script>
-  //   alert('Berhasil Login!');
-  //   document.location.href
-  //   </script>";
-  // } else {
-  //   echo "<script>
-  //   alert('Username atau Password salah');
-  //   </script>";
-  // }
 }
 ?>
 

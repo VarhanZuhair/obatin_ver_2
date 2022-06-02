@@ -20,6 +20,9 @@ if(isset($_POST["login"])){
       $_SESSION["user"] = $username;
       $_SESSION["login"] = true;
 
+      //set cookie
+      setcookie('username', $username);
+
       header("Location: beranda.php");
       exit;
     }

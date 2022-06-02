@@ -1,6 +1,7 @@
 <?php
 require 'functions.php';
 session_start();
+
 if(!isset($_SESSION["login"])){
   header("Location: login.php");
 }
@@ -41,13 +42,13 @@ if(!isset($_SESSION["login"])){
               <a href="login.php" class=" ms-auto">
                 <button class="btn btn-outline-danger" type="button">
                   <?php
-                  // if(isset($_SESSION["login"])){
-                  //   echo $username;
-                  // } else{
-                  //   echo "Login";
-                  // }
+                  if(isset($_COOKIE['username'])){
+                    echo $_COOKIE['username'];
+                  } else{
+                    echo "Login";
+                  }
                   ?>
-                  Login
+                  <!-- Login -->
                 </button>
               </a>
             </div>

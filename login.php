@@ -1,3 +1,35 @@
+<?php
+require 'functions.php';
+if(isset($_POST["login"])){
+
+  $username = $_POST["username"];
+  $password = $_POST["password"];
+
+  $result = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username'");
+
+  if(mysqli_num_rows($result) === 1){
+    //cek password
+    $row = mysqli_fetch_assoc($result);
+    if(password_verify($password, $row["password"])){
+      header("Location: beranda.php");
+      exit;
+    }
+  }
+
+  $error = true;
+  // if(register($_POST) > 0){
+  //   echo "<script>
+  //   alert('Berhasil Login!');
+  //   document.location.href
+  //   </script>";
+  // } else {
+  //   echo "<script>
+  //   alert('Username atau Password salah');
+  //   </script>";
+  // }
+}
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -39,20 +71,27 @@
     <section>
       <div class="row px-5 justify-content-center">
         <div class="col-md-4 py-5 px-5 shadow-lg kotak-login">
-          <form name="form">
+          <form name="form" action="" method="post">
             <div class="row">
               <h2 class="text-center">LOGIN</h2>
             </div>
             <div class="mb-3">
               <!-- Email -->
-              <label for="exampleInputEmail1" class="form- py-3">Email address</label>
-              <input type="email" name="email" class="form-control kolom-input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email Address">
+              <label for="exampleInputEmail1" class="form- py-3">Username</label>
+              <input type="test" name="username" class="form-control kolom-input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email Address">
             </div>
             <div class="mb-3">
               <!-- Password -->
               <label for="exampleInputPassword1" class="form-label py-3">Password</label>
               <input type="password" name="password" class="form-control kolom-input" id="exampleInputPassword1" placeholder="Password">
             </div>
+            <?php
+              if(isset($error)) : 
+            ?>
+            <strong class="text-danger">Username atau Password salah !</strong>
+            <?php
+              endif;
+            ?>
             <div class="row">
               <div class="col">
                 <p class="text-center">Don't have account? Click here to <a href="register.php" style="text-decoration: none;">Sign Up</a></p>
@@ -66,7 +105,7 @@
               <div class="col"></div>
               <div class="col-8">
                 <div class="row">
-                  <button type="submit" class="btn tombol-submit"><b>LOG IN</b></button>
+                  <button type="submit" name="login" class="btn tombol-submit"><b>LOG IN</b></button>
                 </div>
               </div>
               <div class="col"></div>

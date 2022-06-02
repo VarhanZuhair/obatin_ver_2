@@ -11,7 +11,7 @@ function register($data){
 	$email = $data["email"];
 	$password = mysqli_real_escape_string($conn, $data["password"]);
 	$password2 = mysqli_real_escape_string($conn, $data["password2"]); 	
-	$cek = mysqli_query($conn, "SELECT username FROM users WHERE username = '$username' ");
+	$cek = mysqli_query($conn, "SELECT username FROM user WHERE username = '$username' ");
 
 	if (mysqli_num_rows($cek) > 0){
 		echo "<script>alert('Username sudah ada !');</script>";
@@ -26,7 +26,7 @@ function register($data){
 	
 	$password = password_hash($password, PASSWORD_DEFAULT);
 
-	$query = mysqli_query($conn, "INSERT INTO users (first_name, last_name, phone_number, username, email, password) VALUES (
+	$query = mysqli_query($conn, "INSERT INTO user (first_name, last_name, phone_number, username, email, password) VALUES (
         '$first_name',
         '$last_name',
         '$phone_number',

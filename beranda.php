@@ -1,3 +1,12 @@
+<?php
+require 'functions.php';
+session_start();
+if(!isset($_SESSION["login"])){
+  header("Location: login.php");
+}
+
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -29,8 +38,17 @@
                   <a class="nav-link active text-secondary" aria-current="page" href="#">Obat & Vitamin</a>
                 </li>
               </ul>
-              <a href="login.html" class=" ms-auto">
-                <button class="btn btn-outline-danger" type="button">Login</button>
+              <a href="login.php" class=" ms-auto">
+                <button class="btn btn-outline-danger" type="button">
+                  <?php
+                  // if(isset($_SESSION["login"])){
+                  //   echo $username;
+                  // } else{
+                  //   echo "Login";
+                  // }
+                  ?>
+                  Login
+                </button>
               </a>
             </div>
           </div>

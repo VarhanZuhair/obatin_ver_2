@@ -126,6 +126,9 @@
                             <b>Subtotal : </b>
                         </div>
                         <div class="row mt-3 mx-4">                           
+                            <button type="submit" class="btn btn-outline-success">ADD TO CART</button>
+                        </div>
+                        <div class="row mt-3 mx-4">                           
                             <button type="submit" class="btn btn-outline-success">BELI</button>
                         </div>
                     </div>

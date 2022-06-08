@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("localhost","root","","obatin_database");
+$conn = mysqli_connect("localhost","root","","databaseobatin");
 
 function register($data){
 	global $conn;

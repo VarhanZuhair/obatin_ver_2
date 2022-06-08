@@ -39,13 +39,27 @@ if(!isset($_SESSION["login"])){
                   <a class="nav-link active text-secondary" aria-current="page" href="#">Obat & Vitamin</a>
                 </li>
               </ul>
-              <a href="login.php" class=" ms-auto">
-                <button class="btn btn-outline-danger" type="button">
+              
                   <?php
-                  if(isset($_COOKIE['username'])){
-                    echo $_COOKIE['username'];
-                  } else{
-                    echo "Login";
+                  if(isset($_COOKIE['username'])){ 
+                    echo '
+                   
+                    <a class="dropdown-toggle ms-auto" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">';
+                      echo "Welcome, ".$_COOKIE['username'];
+                    echo '</a>
+                    <ul class="dropdown-menu me-auto" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="#">My Profile</a></li>
+                      <li><a class="dropdown-item" href="#">Coming Soon</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="logout.php">Logout</a></li>
+                    </ul>';
+                      // echo $_COOKIE['username'];
+                  }else{
+                    echo '
+                    <a href="login.php" class=" ms-auto">
+                    <button class="btn btn-outline-danger" type="button">
+                    Login
+                    </a>';
                   }
                   ?>
                   <!-- Login -->

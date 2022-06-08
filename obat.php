@@ -16,7 +16,7 @@
         <!-- NAVBAR -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
           <div class="container">
-            <a class="navbar-brand" href="index.html">OBATIN</a>
+            <a class="navbar-brand" href="beranda.php">OBATIN</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -29,8 +29,16 @@
                   <a class="nav-link active text-secondary" aria-current="page" href="#">Obat & Vitamin</a>
                 </li>
               </ul>
-              <a href="login.html" class=" ms-auto">
-                <button class="btn btn-outline-danger" type="button">Login</button>
+              <a href="login.php" class=" ms-auto">
+                <button class="btn btn-outline-danger" type="button">
+                <?php
+                  if(isset($_COOKIE['username'])){
+                    echo $_COOKIE['username'];
+                  } else{
+                    echo "Login";
+                  }
+                ?>
+              </button>
               </a>
             </div>
           </div>
@@ -120,11 +128,11 @@
                             <div class="col">
                                 <input type="number" placeholder="Jumlah">
                             </div>
-                            <div class="col mt-3"><b>Stok : 69</b></div>
+                            <div class="col mt-3"><b>Stok > 10</b></div>
                         </div>
-                        <div class="row mt-3">
+                        <!-- <div class="row mt-3">
                             <b>Subtotal : </b>
-                        </div>
+                        </div> -->
                         <div class="row mt-3 mx-4">                           
                             <button type="submit" class="btn btn-outline-success">ADD TO CART</button>
                         </div>

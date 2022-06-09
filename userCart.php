@@ -71,6 +71,15 @@
                 There is no items in your cart
             </p>
         </div>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-9"></div>
+            <div class="col-1">
+                <a href="#">
+                    <button type="button" class="btn btn-danger">Delete</button>
+                </a>
+            </div>
+        </div>
     </div>
     <!-- FOOTER -->
     <section>

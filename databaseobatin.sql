@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 09, 2022 at 05:50 AM
+-- Generation Time: Jun 09, 2022 at 06:47 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -46,7 +46,8 @@ CREATE TABLE `obat` (
 
 INSERT INTO `obat` (`id_obat`, `nama_obat`, `gambar_obat`, `bahan_aktif_obat`, `harga_obat`, `stok_obat`, `info_obat`, `manfaat_obat`, `bentuk_obat`, `kategori_obat`) VALUES
 (1, 'Panadol', 'https://cdn.discordapp.com/attachments/818131624502886411/976689142689832991/unknown.png', 'Paracetamol', 6000, 20, 'Panadol adalah obat yang mengandung paracetamol. Panadol memiliki beberapa varian yang ditujukan untuk meredakan gejala dan keluhan, seperti demam, flu, sakit kepala, hidung tersumbat, batuk tidak berdahak, dan bersin-bersin. Panadol juga sering digunakan untuk meredakan sakit gigi dan nyeri otot.', 'Meredakan demam', 'Tablet', 'Obat bebas'),
-(2, 'Decolgen', 'https://cdn.discordapp.com/attachments/818131624502886411/984301901841563668/unknown.png', 'Paracetamol', 3000, 15, 'Deskripsi\r\n\r\nDECOLGEN merupakan obat flu dengan kandungan Paracetamol, Phenylpropanolamine HCl, dan Chlorpheniramine maleate. Paracetamol digunakan sebagai pereda demam dan sakit kepala. Phenylpropanolamine digunakan untuk mengobati gejala hidung tersumbat. Chlorpheniramine maleate bekerja sebagai antihistamin atau anti alergi sehingga obat ini digunakan untuk meredakan gejala flu seperti sakit kepala, demam, bersin-bersin dan hidung tersumbat.\r\n', 'Meredakan gejala flu', 'Tablet', 'Obat bebas terbatas');
+(2, 'Decolgen', 'https://cdn.discordapp.com/attachments/818131624502886411/984301901841563668/unknown.png', 'Paracetamol', 3000, 15, 'Deskripsi\r\n\r\nDECOLGEN merupakan obat flu dengan kandungan Paracetamol, Phenylpropanolamine HCl, dan Chlorpheniramine maleate. Paracetamol digunakan sebagai pereda demam dan sakit kepala. Phenylpropanolamine digunakan untuk mengobati gejala hidung tersumbat. Chlorpheniramine maleate bekerja sebagai antihistamin atau anti alergi sehingga obat ini digunakan untuk meredakan gejala flu seperti sakit kepala, demam, bersin-bersin dan hidung tersumbat.\r\n', 'Meredakan gejala flu', 'Tablet', 'Obat bebas terbatas'),
+(3, 'Betadine Mouth Wash', 'https://cdn.discordapp.com/attachments/818131624502886411/984305318219612200/unknown.png', 'Povidone iodine', 35000, 20, 'BETADINE OBAT KUMUR 190 ML mengandung zat aktif Povidone iodine, obat kumur ini digunakan untuk mengatasi masalah mulut seperti sakit tenggorokan, gusi bengkak, sariawan, bau mulut dan napas tidak segar.\r\n', 'Obat kumur antiseptik untuk rongga mulut', 'Sirup', 'Obat Bebas Terbatas');
 
 -- --------------------------------------------------------
 
@@ -96,7 +97,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `obat`
 --
 ALTER TABLE `obat`
-  MODIFY `id_obat` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_obat` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `user`

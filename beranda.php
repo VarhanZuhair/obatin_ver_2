@@ -44,10 +44,10 @@ if(!isset($_SESSION["login"])){
                   if(isset($_COOKIE['username'])){ 
                     echo '
                    
-                    <a class="dropdown-toggle ms-auto" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">';
+                    <a class="dropdown-toggle ms-auto text-danger" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">';
                       echo "Welcome, ".$_COOKIE['username'];
                     echo '</a>
-                    <ul class="dropdown-menu me-auto" aria-labelledby="navbarDropdown">
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <li><a class="dropdown-item" href="userProfile.php">My Profile</a></li>
                       <li><a class="dropdown-item" href="userCart.php">My Cart</a></li>
                       <li><a class="dropdown-item" href="#">Coming Soon</a></li>
@@ -150,7 +150,7 @@ if(!isset($_SESSION["login"])){
       <!-- dikasih row dengan colom 4 -->
       <div class="row pb-5 mt-5">
         <?php
-        $dataObat = obat("SELECT * from obat");
+        $dataObat = obat("SELECT * from obat ORDER BY id_obat DESC");
         // var_dump($dataObat);
         foreach($dataObat as $obat):
         ?>

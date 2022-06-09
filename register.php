@@ -59,36 +59,36 @@ if(isset($_POST["register"])){
               <div class="row">
                 <label for="exampleInputFullname" class="form- py-3">Full Name</label>
                 <div class="col mb-3">
-                  <input type="text" class="form-control kolom-input" placeholder="First name" aria-label="First name" name="first_name">
+                  <input type="text" class="form-control kolom-input" placeholder="First name" aria-label="First name" name="first_name" required>
                 </div>
                 <div class="col mb-3">
-                  <input type="text" class="form-control kolom-input" placeholder="Last name" aria-label="Last name" name="last_name">
+                  <input type="text" class="form-control kolom-input" placeholder="Last name" aria-label="Last name" name="last_name" required>
                 </div>
               </div>
               <div class="mb-3">
                 <!-- Username -->
                 <label for="exampleInputPhoneNumber" class="form- py-3">Phone Number</label>
-                <input type="text" name="phone_number" class="form-control kolom-input" placeholder="Phone Number">
+                <input type="text" name="phone_number" class="form-control kolom-input" placeholder="Phone Number" required>
               </div>
               <div class="mb-3">
                 <!-- Username -->
                 <label for="exampleInputUsername" class="form- py-3">Username</label>
-                <input type="text" name="username" class="form-control kolom-input" placeholder="Username">
+                <input type="text" name="username" class="form-control kolom-input" placeholder="Username" required>
               </div>
               <div class="mb-3">
                 <!-- Email -->
                 <label for="exampleInputEmail1" class="form- py-3">Email address</label>
-                <input type="email" name="email" class="form-control kolom-input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email Address">
+                <input type="email" name="email" class="form-control kolom-input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email Address" required>
               </div>
               <div class="mb-3">
                 <!-- Password -->
                 <label for="exampleInputPassword1" class="form-label py-3">Password</label>
-                <input type="password" name="password" class="form-control kolom-input" id="exampleInputPassword1" placeholder="Password">
+                <input type="password" name="password" class="form-control kolom-input" id="exampleInputPassword1" placeholder="Password" required>
               </div>
               <div class="mb-3">
                 <!-- Password -->
                 <label for="exampleInputPassword2" class="form-label py-3">Confirm Password</label>
-                <input type="password" name="password2" class="form-control kolom-input" id="exampleInputPassword2" placeholder="Confirm Password">
+                <input type="password" name="password2" class="form-control kolom-input" id="exampleInputPassword2" placeholder="Confirm Password" required>
               </div>
               <div class="row py-3">
                 <div class="col"></div>

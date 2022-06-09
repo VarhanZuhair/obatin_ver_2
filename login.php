@@ -80,12 +80,12 @@ if(isset($_POST["login"])){
             <div class="mb-3">
               <!-- Email -->
               <label for="exampleInputEmail1" class="form- py-3">Username</label>
-              <input type="test" name="username" class="form-control kolom-input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email Address">
+              <input type="test" name="username" class="form-control kolom-input" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email Address" required>
             </div>
             <div class="mb-3">
               <!-- Password -->
               <label for="exampleInputPassword1" class="form-label py-3">Password</label>
-              <input type="password" name="password" class="form-control kolom-input" id="exampleInputPassword1" placeholder="Password">
+              <input type="password" name="password" class="form-control kolom-input" id="exampleInputPassword1" placeholder="Password" required>
             </div>
             <?php
               if(isset($error)) : 

@@ -1,3 +1,8 @@
+<?php
+require 'functions.php';
+$id = $_GET["id_obat"];
+$dataObat = obat("SELECT * from obat WHERE id_obat = '$id'");
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -64,6 +69,9 @@
       </div>
     </section>
 
+    <?php
+    foreach($dataObat as $obat ) :
+    ?>
     <!-- INGFO BARANG/OBATNYA -->
     <section>
         <div class="container">
@@ -72,7 +80,7 @@
                     <div class="row pe-2">
                         <!-- Gambar Obat -->
                         <div class="col gambar-obat">
-                            <!-- <img src="https://cdn.discordapp.com/attachments/818131624502886411/976689142689832991/unknown.png" sizes="cover" alt="PANADOL"> -->
+                            <img src="<?php echo $obat['gambar_obat']; ?>" sizes="cover" alt="PANADOL" height="290px">
                         </div>
                     </div>
                     <div class="row ">
@@ -83,28 +91,28 @@
                             <hr size="4px" color="black">
                             <div class="row">
                                 <div class="col"><b>Manfaat </b></div>
-                                <div class="col">: Meredakan demam.</div>
+                                <div class="col">: <?php echo $obat['manfaat_obat']; ?>.</div>
                             </div>
                             <div class="row">
                                 <div class="col"><b>Bahan aktif </b></div>
-                                <div class="col">: Paracetamol.</div>
+                                <div class="col">: <?php echo $obat['bahan_aktif_obat']; ?>.</div>
                             </div>
                             <div class="row">
                                 <div class="col"><b>Bentuk Obat </b></div>
-                                <div class="col">: Tablet.</div>
+                                <div class="col">: <?php echo $obat['bentuk_obat']; ?>.</div>
                             </div>
                             <div class="row">
                                 <div class="col"><b>Kategori </b></div>
-                                <div class="col">: Obat bebas.</div>
+                                <div class="col">: <?php echo $obat['kategori_obat']; ?>.</div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="row">
-                        <h1>PANADOL</h1>
-                        <h5>PARACETAMOL</h5>
-                        <h1>Rp 6.000</h1>
+                        <h1><?php echo $obat['nama_obat']; ?></h1>
+                        <h5><?php echo $obat['bahan_aktif_obat']; ?></h5>
+                        <h1>Rp <?php echo $obat['harga_obat']; ?></h1>
                     </div>
                     <div class="row mt-4">
                         <hr size="7px" color="black">
@@ -112,11 +120,7 @@
                     </div>
                     <div class="row">
                         <p>
-                            Panadol adalah obat yang mengandung paracetamol. Panadol
-                            memiliki beberapa varian yang ditujukan untuk meredakan
-                            gejala dan keluhan, seperti demam, flu, sakit kepala, hidung
-                            tersumbat, batuk tidak berdahak, dan bersin-bersin. Panadol
-                            juga sering digunakan untuk meredakan sakit gigi dan nyeri otot.
+                        <?php echo $obat['info_obat']; ?>
                         </p>
                     </div>
                 </div>
@@ -128,7 +132,7 @@
                             <div class="col">
                                 <input type="number" placeholder="Jumlah">
                             </div>
-                            <div class="col mt-3"><b>Stok > 10</b></div>
+                            <div class="col mt-3"><b>Stok <?php echo $obat['stok_obat']; ?></b></div>
                         </div>
                         <!-- <div class="row mt-3">
                             <b>Subtotal : </b>
@@ -144,7 +148,9 @@
             </div>
         </div>
     </section>
-
+    <?php
+      endforeach;
+    ?>
 
     <!-- FOOTER -->
     <section>

@@ -48,7 +48,8 @@ if(!isset($_SESSION["login"])){
                       echo "Welcome, ".$_COOKIE['username'];
                     echo '</a>
                     <ul class="dropdown-menu me-auto" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="#">My Profile</a></li>
+                      <li><a class="dropdown-item" href="userProfile.php">My Profile</a></li>
+                      <li><a class="dropdown-item" href="userCart.php">My Cart</a></li>
                       <li><a class="dropdown-item" href="#">Coming Soon</a></li>
                       <li><hr class="dropdown-divider"></li>
                       <li><a class="dropdown-item" href="logout.php">Logout</a></li>
@@ -148,19 +149,27 @@ if(!isset($_SESSION["login"])){
       <!-- produknya -->
       <!-- dikasih row dengan colom 4 -->
       <div class="row pb-5 mt-5">
-        <a href="obat.php"  class="col-md-3">
+        <?php
+        $dataObat = obat("SELECT * from obat");
+        // var_dump($dataObat);
+        foreach($dataObat as $obat):
+        ?>
+        <a href="obat.php?id_obat=<?php echo $obat['id_obat']; ?>"  class="col-md-3">
           <div>
             <div class="card" style="width: 18rem;">
-              <img src="https://cdn.discordapp.com/attachments/818131624502886411/976689142689832991/unknown.png" style="background-size: cover" class="card-img-top" alt="Panadol">
+              <img src="<?php echo $obat['gambar_obat']; ?>" style="background-size: cover" class="card-img-top" alt="Panadol">
               <div class="card-body">
-                <h5 class="card-title">Panadol</h5>
+                <h5 class="card-title"><?php echo $obat['nama_obat']; ?></h5>
                 <p class="card-text">per kaplet</p>
-                <b class="card-text">Rp 6.000</b>
+                <b class="card-text">Rp, <?php echo $obat['harga_obat']; ?></b>
                 <p class="card-text text-secondary">Indonesia</p>
               </div>
             </div>
           </div>
         </a>
+        <?php
+        endforeach;
+        ?>
         <a href="#"  class="col-md-3">
           <div>
             <div class="card" style="width: 18rem;">
